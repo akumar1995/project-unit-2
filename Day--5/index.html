@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home page</title>
+    <style>
+        #cont{
+            background-color: blue;
+            text-align: right;
+        }
+        #cont>button{
+          margin:20px;
+          
+          
+        }
+    </style>
+</head>
+<body> 
+    <h1>Home page
+    </h1>
+    <div id="cont">
+
+    </div>
+   
+</body>
+</html>
+<script>
+   let homeObj=[
+    {btn:"Privacy center",color:"green"},
+    {btn:"Contact Us",color:"green"},
+    {btn:"Support ",color:"green"},
+    {btn:"Login",color:"green"}
+   ]
+   function Display(data){
+   homeObj.forEach(function(elem,index){
+        B=document.createElement("button");
+        B.innerText=elem.btn
+        B.style.color=elem.color;
+        document.querySelector("#cont").append(B)
+    })
+   
+   }
+   Display(homeObj)
+
+</script>
