@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign in</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <img src="https://account.leadiq.com/common/img/logo-green-full.f6ad239e.svg" alt="">
+    
+        <img src="https://account.leadiq.com/common/img/logo-stripe.529f0a03.png" alt="">
+        <form>
+            <label for="EMAIL">EMAIL</label><br>
+            <input id="email" type="text"><br>
+            <label id="" for="">PASSWORD</label><br>
+           <input id="password" type="password"><br>
+            <input type="submit" value="LOGIN">
+   
+    </form>
+</body>
+</html>
+<script>
+
+let arr=JSON.parse(localStorage.getItem("signup"))||[]
+
+    form=document.querySelector("form");
+    form.addEventListener("submit",function(e){
+   e.preventDefault();
+
+   if(arr.length===0){
+    alert("No user till now")
+    return
+   }
+     let obj={
+         Pemail:form.email.value,
+         Ppassword:form.password.value
+     }
+     let flag=false
+    arr.forEach(function(ele,index){
+        if(ele.Pemail===obj.Pemail &&ele.Ppassword===obj.Ppassword)
+        {
+            flag=true;
+
+            localStorage.setItem("signin",JSON.stringify(ele))
+            alert("Sign in succesfully");
+            window.location.href="index.html"
+        }
+    })
+    if(flag===false){
+        alert("user does not exist")
+    }
+     
+    })
+
+</script>
